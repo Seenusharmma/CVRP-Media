@@ -19,6 +19,9 @@ export const useSocialAuth = () => {
            const provider = strategy == "oauth_google" ? "Google" : "Apple"
            Alert.alert("Error", `Failed  to sign in with ${provider} Please try again`)
             
+        }finally {
+            setIsLoading(false)
         }
-    }
+    };
+    return {isLoading, handleSocialAuth};
 }
